@@ -7,7 +7,7 @@ const app = express()
 
 // using middlewares
 
-const allowedOrigins = ["http://localhost:5173", "https://your-frontend-deployed-url.com"];
+const allowedOrigins = ["http://localhost:5173", "https://portfolio-frontend-ruby-rho.vercel.app"];
 
 app.use(cors({
     origin: function (origin, callback) {
