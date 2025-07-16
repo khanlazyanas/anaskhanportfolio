@@ -25,6 +25,8 @@ app.use(express.json())
 
 // Routes
 app.use("/api/message",messageRoutes)
+
+
 app.get("/",(req,res)=>{
     res.send("Working")
 })

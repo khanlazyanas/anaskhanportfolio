@@ -1,5 +1,4 @@
-import Message from "../data/database.js"
-
+import Message from "../models/messagemodel.js";
 export const sendmessage = async(req,res)=>{
   const {name,email,message} = req.body;
 
