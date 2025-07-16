@@ -7,9 +7,20 @@ const app = express()
 
 // using middlewares
 
+const allowedOrigins = ["http://localhost:5173", "https://your-frontend-deployed-url.com"];
+
 app.use(cors({
-    origin: "http://localhost:5173"  
-}));app.use(express.json())
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    }
+}));
+
+
+app.use(express.json())
 
 
 // Routes
