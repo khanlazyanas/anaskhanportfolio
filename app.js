@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import messageRoutes from "./routes/messageroute.js"
+import visitroutes from "./routes/visitroutes.js"
 
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(express.json())
 
 // Routes
 app.use("/api/message",messageRoutes)
+app.use("/api/visit",visitroutes)
 
 
 app.get("/",(req,res)=>{
